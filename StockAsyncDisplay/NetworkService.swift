@@ -19,7 +19,7 @@ final class NetworkService {
 
     func endpointForQuotes(symbols: Array<String>) -> String {
         let symbolsString: String = symbols.joined(separator: "\", \"")
-        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&env=http://datatables.org/alltables.env"
+        let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback="
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
         
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=" + encodedQuery!
