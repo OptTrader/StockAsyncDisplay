@@ -16,7 +16,7 @@ public extension UIColor {
         return colorFromHex(hexColor: normalizeHexColorString(hexColor: hexColor)!)
     }
     
-    //MARK: Private methods
+    //  MARK: Private methods
     
     private class func colorFromHex(hexColor: String) -> UIColor? {
         
